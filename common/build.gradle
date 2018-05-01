@@ -1,0 +1,23 @@
+apply plugin: 'kotlin-platform-common'
+
+archivesBaseName = 'thorax-common'
+
+dependencies {
+    implementation libraries.kotlin_stdlib_common
+    testImplementation libraries.kotlin_test_annotations_common
+    testImplementation libraries.kotlin_test_common
+}
+
+allprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.kotlin
+}
+
+artifacts {
+    archives sourcesJar
+}

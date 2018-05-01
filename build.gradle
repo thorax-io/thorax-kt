@@ -1,0 +1,41 @@
+allprojects {
+    group 'io.thorax'
+    version '0.0.1'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+buildscript {
+    ext.kotlinVersion = '1.2.41'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+ext {
+    libraries = [
+        junit: "junit:junit:4.12",
+        kotlin_stdlib: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+        kotlin_stdlib_common: "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlinVersion",
+        kotlin_test_annotations_common: "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlinVersion",
+        kotlin_test_common: "org.jetbrains.kotlin:kotlin-test-common:$kotlinVersion",
+        kotlin_test_junit: "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
+    ]
+}
+
+subprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}

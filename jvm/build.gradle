@@ -1,0 +1,30 @@
+apply plugin: 'kotlin-platform-jvm'
+
+archivesBaseName = 'thorax-jvm'
+
+dependencies {
+    expectedBy project(':common')
+    implementation libraries.kotlin_stdlib
+    testImplementation libraries.kotlin_test_junit
+}
+
+allprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.kotlin
+}
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                   'Implementation-Version': project.version)
+    }
+}
+
+artifacts {
+    archives sourcesJar
+}

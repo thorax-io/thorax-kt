@@ -1,0 +1,4 @@
+rootProject.name = 'thorax'
+
+include ':common'
+include ':jvm'
