@@ -21,7 +21,7 @@ fun <X : Any, T : Any> Source<X, Source<X, T>>.spawn(
 )
 
 fun <X : Any, T : Any, A : Any> Transport<X, Source<X, T>, A>.spawn(
-        schedule: Schedule
+    schedule: Schedule
 ): Transport<X, T, A> = ScheduleTransport(
         upstream = MappingTransport(
                 upstream = this,
