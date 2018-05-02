@@ -1,5 +1,7 @@
 # Thorax Kotlin
 
+[![Build Status](https://travis-ci.org/thorax-io/thorax-kt.svg?branch=master)](https://travis-ci.org/thorax-io/thorax-kt)
+
 Typesafe, honest and minimalistic building blocks for asynchronous programs.
 
 ## License
