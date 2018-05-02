@@ -20,8 +20,8 @@ task sourcesJar(type: Jar) {
 
 jar {
     manifest {
-        attributes('Implementation-Title': project.name,
-                   'Implementation-Version': project.version)
+        attributes('Implementation-Title': rootProject.name,
+                   'Implementation-Version': rootProject.version)
     }
 }
 
