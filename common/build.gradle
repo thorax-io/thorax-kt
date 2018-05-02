@@ -1,6 +1,14 @@
 apply plugin: 'kotlin-platform-common'
 
-archivesBaseName = 'thorax-common'
+archivesBaseName = 'io.thorax.thorax.common'
+
+// Workaround for #KT-23574
+// https://github.com/JetBrains/kotlin/commit/2b41a0d30e7c522c8648f4a692b76ba42bd8ac57
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompileCommon).all {
+    kotlinOptions {
+        freeCompilerArgs = ['-module-name', 'io.thorax.thorax.common']
+    }
+}
 
 dependencies {
     implementation libraries.kotlin_stdlib_common

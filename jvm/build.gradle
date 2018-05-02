@@ -1,6 +1,6 @@
 apply plugin: 'kotlin-platform-jvm'
 
-archivesBaseName = 'thorax-jvm'
+archivesBaseName = 'io.thorax.thorax.jvm'
 
 dependencies {
     expectedBy project(':common')
